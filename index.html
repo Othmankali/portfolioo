@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Otmane MABCHOUR - Portfolio [SN] [ENSEEIHT]</title>
+<meta name="description" content="Portfolio de Otmane MABCHOUR, étudiant en [SN] à [ENSEEIHT]. Projets, expériences, mobilité et engagement.">
+<meta property="og:title" content="Otmane MABCHOUR – Portfolio">
+<meta property="og:description" content="Projets d'ingénierie, mobilité internationale, engagement.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/Confident Young Professional in Black Suit.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{display:['Plus Jakarta Sans','sans-serif']}}}}</script>
+<script src="https://unpkg.com/lucide@0.303.0/dist/umd/lucide.min.js"></script>
+<script>try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.classList.add("dark")}catch(e){}</script>
+<style>
+body{font-family:Inter,sans-serif;background:#fff;color:#1f2937}
+.hero-split{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 73px);max-width:80rem;margin-inline:auto;position:relative;overflow:hidden}
+.diagonal-divider{position:absolute;top:-5%;left:49%;width:3px;height:115%;background:#dc2626;transform-origin:top center;transform:rotate(4deg) scaleY(0);z-index:10;animation:dividerDraw .7s cubic-bezier(.22,1,.36,1) .1s both}
+@keyframes dividerDraw{to{transform:rotate(4deg) scaleY(1)}}
+.hero-text-side{display:flex;flex-direction:column;justify-content:center;padding:3rem 2rem;position:relative;z-index:2;clip-path:inset(0 100% 0 0);animation:expandLeft .7s cubic-bezier(.22,1,.36,1) .6s both}
+@media(min-width:1024px){.hero-text-side{padding:3rem 3rem 3rem 4rem}}
+@keyframes expandLeft{to{clip-path:inset(0)}}
+.hero-text-name{opacity:0;transform:translateX(-15px);animation:slideRight .5s ease-out 1s both}
+.hero-text-desc{opacity:0;transform:translateY(10px);animation:fadeUp .5s ease-out 1.3s both}
+.hero-text-meta{opacity:0;animation:fadeIn .4s ease-out 1.6s both}
+@keyframes slideRight{to{opacity:1;transform:translateX(0)}}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{to{opacity:1}}
+.hero-photo-side{position:relative;display:flex;align-items:center;justify-content:center;padding:3rem;z-index:1;clip-path:inset(0 0 0 100%);animation:expandRight .7s cubic-bezier(.22,1,.36,1) .6s both}
+@keyframes expandRight{to{clip-path:inset(0)}}
+.photo-frame{position:relative;width:100%;max-width:380px;aspect-ratio:3/4;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.1)}
+.photo-frame img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:blur(10px);transform:scale(1.03);backface-visibility:hidden;animation:focusClear 1.2s cubic-bezier(.22,1,.36,1) 1s both}
+@keyframes focusClear{to{filter:blur(0);transform:scale(1)}}
+.photo-scan{position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,#dc2626 30%,#dc2626 70%,transparent);z-index:3;opacity:0;animation:scanPhoto .9s ease-in-out 1.1s both}
+@keyframes scanPhoto{0%{top:0;opacity:.7}to{top:100%;opacity:0}}
+.focus-bracket{position:absolute;top:50%;left:50%;width:120px;height:120px;transform:translate(-50%,-50%);z-index:4;pointer-events:none;opacity:0;animation:bracketPulse 1.4s ease-out 1.3s both}
+.focus-bracket:before,.focus-bracket:after,.focus-bracket span:before,.focus-bracket span:after{content:"";position:absolute;width:16px;height:16px;border:0 solid #dc2626}
+.focus-bracket:before{top:0;left:0;border-top-width:2px;border-left-width:2px}
+.focus-bracket:after{top:0;right:0;border-top-width:2px;border-right-width:2px}
+.focus-bracket span:before{bottom:0;left:0;border-bottom-width:2px;border-left-width:2px}
+.focus-bracket span:after{bottom:0;right:0;border-bottom-width:2px;border-right-width:2px}
+@keyframes bracketPulse{0%{opacity:0;transform:translate(-50%,-50%) scale(1.3)}20%{opacity:1;transform:translate(-50%,-50%) scale(1)}60%{opacity:1}to{opacity:0}}
+.photo-shadow{position:absolute;top:12px;left:12px;width:100%;max-width:380px;aspect-ratio:3/4;background:#f3f4f6;z-index:-1}
+@media(max-width:767px){
+.hero-split{grid-template-columns:1fr;min-height:auto}
+.diagonal-divider{top:auto;left:50%;width:0;height:3px;transform:translateX(-50%);position:relative;animation:mobileLineDraw .5s cubic-bezier(.22,1,.36,1) .8s both;margin:0 auto}
+@keyframes mobileLineDraw{to{width:60%}}
+.hero-photo-side{padding:2rem 1.5rem 1rem;order:-1;clip-path:inset(100% 0 0 0);animation:revealDown .6s cubic-bezier(.22,1,.36,1) .1s both}
+@keyframes revealDown{to{clip-path:inset(0)}}
+.hero-text-side{padding:1.5rem 1.5rem 3rem;align-items:center;text-align:center;clip-path:inset(0 0 100% 0);animation:revealUp .6s cubic-bezier(.22,1,.36,1) 1s both}
+@keyframes revealUp{to{clip-path:inset(0)}}
+.hero-text-side .max-w-sm{max-width:100%}
+.hero-text-meta .flex{justify-content:center}
+.photo-frame{max-width:280px;margin:0 auto}
+.photo-shadow{display:none}
+}
+.fade-in-section{opacity:0;transition:opacity .6s ease-out}
+.fade-in-section.is-visible{opacity:1}
+@media(prefers-reduced-motion:reduce){
+.diagonal-divider{animation:none;transform:rotate(4deg)}
+.hero-photo-side,.hero-text-side{clip-path:none;animation:none}
+.photo-frame img{animation:none;filter:none;transform:none}
+.focus-bracket,.photo-scan{display:none}
+.hero-text-desc,.hero-text-meta,.hero-text-name{animation:none!important;opacity:1!important;transform:none!important}
+.fade-in-section{opacity:1;transition:none}}
+#mobile-menu{display:grid;grid-template-rows:0fr;overflow:hidden;transition:grid-template-rows .3s ease-out,opacity .3s ease-out;opacity:0}
+#mobile-menu.menu-open{grid-template-rows:1fr;opacity:1}
+#mobile-menu>div{overflow:hidden}
+@media(min-width:768px){#mobile-menu{display:none}}
+
+/* ===== Mode sombre ===== */
+html.dark{color-scheme:dark}
+.icon-sun{display:none}.dark .icon-sun{display:block}.dark .icon-moon{display:none}
+.dark body{background:#0b1220;color:#e5e7eb}
+.dark .bg-white{background-color:#0b1220}
+.dark .bg-gray-50{background-color:#0f172a}
+.dark .bg-gray-100{background-color:#1e293b}
+.dark .bg-white\/95{background-color:rgba(11,18,32,.95)}
+.dark .rounded-xl.bg-white{background-color:#111c33}
+.dark .bg-gray-800{background-color:#374151}
+.dark .bg-red-50{background-color:rgba(220,38,38,.15)}
+.dark .text-gray-900{color:#f9fafb}
+.dark .text-gray-800{color:#f3f4f6}
+.dark .text-gray-700{color:#d1d5db}
+.dark .text-gray-600{color:#cbd5e1}
+.dark .text-gray-500{color:#9ca3af}
+.dark .text-red-600{color:#f87171}
+.dark .hover\:text-red-600:hover,.dark .hover\:text-red-800:hover,.dark .group:hover .group-hover\:text-red-800{color:#fca5a5}
+.dark .hover\:text-gray-900:hover{color:#fff}
+.dark .hover\:bg-gray-100:hover{background-color:#1e293b}
+.dark .border-gray-100,.dark .border-gray-200,.dark .border-gray-300,.dark hr{border-color:#1f2a44}
+.dark .divide-gray-200>:not([hidden])~:not([hidden]){border-color:#1f2a44}
+.dark .photo-shadow{background:#1e293b}
+.dark .photo-frame{box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.dark img.w-6,.dark img.w-12{background:#e5e7eb;border-radius:.375rem;padding:2px}
+</style>
+</head>
+<body class="antialiased">
+
+<header class="bg-white/95 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-200">
+  <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="#" class="text-xl font-bold text-gray-900 tracking-tight font-display">Otmane MABCHOUR</a>
+    <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+      <a href="#" class="text-gray-600 hover:text-red-600 transition-colors">Accueil</a>
+      <a href="#engineering" class="text-gray-600 hover:text-red-600 transition-colors">Ingénierie</a>
+      <a href="#career" class="text-gray-600 hover:text-red-600 transition-colors">Carrière</a>
+      <a href="#mobility" class="text-gray-600 hover:text-red-600 transition-colors">Mobilité</a>
+      <a href="#engagement" class="text-gray-600 hover:text-red-600 transition-colors">Engagement</a>
+      <a href="#activities" class="text-gray-600 hover:text-red-600 transition-colors">Activités</a>
+      <a href="#contact" class="text-gray-600 hover:text-red-600 transition-colors">Contact</a>
+      <div class="flex items-center border border-red-600 rounded-full overflow-hidden text-sm font-semibold" role="group" aria-label="Langue">
+        <button type="button" data-lang="fr" class="lang-btn px-3 py-0.5 text-red-600">FR</button>
+        <button type="button" data-lang="en" class="lang-btn px-3 py-0.5 text-red-600">EN</button>
+        <button type="button" data-lang="es" class="lang-btn px-3 py-0.5 text-red-600">ES</button>
+      </div>
+      <button type="button" class="theme-btn p-1.5 rounded-full text-gray-600 hover:text-red-600 transition-colors" aria-label="Changer de thème"><svg class="icon-moon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg class="icon-sun w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" stroke-width="2"/><path stroke-linecap="round" stroke-width="2" d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></button>
+    </div>
+    <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none" aria-label="Ouvrir le menu">
+      <svg id="icon-burger" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+      <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+  </nav>
+  <div id="mobile-menu" class="md:hidden border-b border-gray-200">
+    <div class="px-6 pb-4 pt-2 space-y-2">
+      <a href="#" class="block text-gray-600 hover:text-red-600">Accueil</a>
+      <a href="#engineering" class="block text-gray-600 hover:text-red-600">Ingénierie</a>
+      <a href="#career" class="block text-gray-600 hover:text-red-600">Carrière</a>
+      <a href="#mobility" class="block text-gray-600 hover:text-red-600">Mobilité</a>
+      <a href="#engagement" class="block text-gray-600 hover:text-red-600">Engagement</a>
+      <a href="#activities" class="block text-gray-600 hover:text-red-600">Activités</a>
+      <a href="#contact" class="block text-gray-600 hover:text-red-600">Contact</a>
+      <div class="flex items-center gap-2 pt-1">
+        <button type="button" data-lang="fr" class="lang-btn border border-red-600 rounded-full px-3 py-0.5 text-sm font-semibold text-red-600">FR</button>
+        <button type="button" data-lang="en" class="lang-btn border border-red-600 rounded-full px-3 py-0.5 text-sm font-semibold text-red-600">EN</button>
+        <button type="button" data-lang="es" class="lang-btn border border-red-600 rounded-full px-3 py-0.5 text-sm font-semibold text-red-600">ES</button>
+        <button type="button" class="theme-btn p-1.5 rounded-full text-gray-600 hover:text-red-600 transition-colors ml-auto" aria-label="Changer de thème"><svg class="icon-moon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg class="icon-sun w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" stroke-width="2"/><path stroke-linecap="round" stroke-width="2" d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- Accueil -->
+<section id="welcome" class="hero-split">
+  <div class="diagonal-divider"></div>
+  <div class="hero-text-side">
+    <div class="max-w-sm">
+      <h1 class="hero-text-name font-display text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 leading-tight">Otmane MABCHOUR</h1>
+      <p class="hero-text-desc text-gray-500 text-lg mt-5 leading-relaxed">Étudiant ingénieur à ENSEEIHT .</p>
+      <div class="hero-text-meta mt-8 space-y-3 text-sm">
+        <div class="flex items-center gap-3 text-gray-400"><div class="w-1.5 h-1.5 rounded-full bg-red-500"></div><span>[Ton domaine principal]</span></div>
+        <div class="flex items-center gap-3 text-gray-400"><div class="w-1.5 h-1.5 rounded-full bg-red-500"></div><span>N7, Toulouse </span></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-photo-side">
+    <div class="photo-shadow"></div>
+    <div class="photo-frame">
+      <img src="assets/photo.jpg" alt="Portrait de Otmane MABCHOUR">
+      <div class="photo-scan"></div>
+      <div class="focus-bracket"><span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Ingénierie -->
+<section id="engineering" class="py-16 md:py-24 bg-gray-50 fade-in-section">
+  <div class="container mx-auto px-6 max-w-6xl">
+    <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 mb-3 text-center">Ingénierie</h2>
+    <p class="text-lg text-gray-500 mb-12 text-center">Projets et compétences de mon cursus.</p>
+
+    <div class="max-w-6xl mx-auto mb-16">
+      <h3 class="font-display text-2xl font-bold text-gray-900 mb-10 text-center">Compétences</h3>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-6 sm:gap-x-10 lg:gap-x-14 gap-y-12 justify-items-center sm:justify-items-start">
+        <div>
+          <h4 class="text-sm font-semibold text-gray-400 mb-5 pb-2 border-b border-gray-200">Langages</h4>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-6 h-6 flex-shrink-0" alt="Python"><span class="text-sm text-gray-700">Python</span></li>
+            <li class="flex items-center gap-3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" class="w-6 h-6 flex-shrink-0" alt="C++"><span class="text-sm text-gray-700">C++</span></li>
+            <li class="flex items-center gap-3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="w-6 h-6 flex-shrink-0" alt="Java"><span class="text-sm text-gray-700">Java</span></li>
+            <li class="flex items-center gap-3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="w-6 h-6 flex-shrink-0" alt="SQL"><span class="text-sm text-gray-700">SQL</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold text-gray-400 mb-5 pb-2 border-b border-gray-200">Traitement de données</h4>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" class="w-6 h-6 flex-shrink-0" alt="NumPy"><span class="text-sm text-gray-700">NumPy</span></li>
+            <li class="flex items-center gap-3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" class="w-6 h-6 flex-shrink-0" alt="Pandas"><span class="text-sm text-gray-700">Pandas</span></li>
+            <li class="flex items-center gap-3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" class="w-6 h-6 flex-shrink-0" alt="Scikit-learn"><span class="text-sm text-gray-700">Scikit-learn</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold text-gray-400 mb-5 pb-2 border-b border-gray-200">Outils &amp; Systèmes</h4>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" class="w-6 h-6 flex-shrink-0" alt="Windows"><span class="text-sm text-gray-700">Windows</span></li>
+            <li class="flex items-center gap-3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" class="w-6 h-6 flex-shrink-0" alt="Linux"><span class="text-sm text-gray-700">Linux</span></li>
+            <li class="flex items-center gap-3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="w-6 h-6 flex-shrink-0" alt="Git"><span class="text-sm text-gray-700">Git</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold text-gray-400 mb-5 pb-2 border-b border-gray-200">Soft Skills</h4>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3"><i data-lucide="users" class="w-6 h-6 flex-shrink-0 text-gray-400"></i><span class="text-sm text-gray-700">Travail en équipe</span></li>
+            <li class="flex items-center gap-3"><i data-lucide="clipboard-list" class="w-6 h-6 flex-shrink-0 text-gray-400"></i><span class="text-sm text-gray-700">Gestion de projet</span></li>
+            <li class="flex items-center gap-3"><i data-lucide="lightbulb" class="w-6 h-6 flex-shrink-0 text-gray-400"></i><span class="text-sm text-gray-700">Créativité</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="font-display text-2xl font-bold text-gray-900 mt-16 mb-8 text-center">Projets</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <!-- Projet : copie ce bloc pour en ajouter -->
+      <div class="project-card bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <img src="assets/projet1.png" alt="Aperçu du projet 1" class="w-full h-48 object-contain bg-gray-100">
+        <div class="p-6">
+          <h4 class="font-display text-xl font-semibold text-gray-900 mb-2">Nom du projet 1</h4>
+          <p class="text-gray-600 mb-4 text-sm leading-relaxed text-justify">Décris en 3 ou 4 phrases le besoin, ce que tu as construit, les choix techniques et le résultat obtenu.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">React</span>
+            <span class="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Node.js</span>
+            <span class="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">PostgreSQL</span>
+          </div>
+          <div class="mt-6 flex justify-center">
+            <a href="https://exemple.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-white hover:bg-gray-100 text-gray-700 border border-gray-300 font-medium text-sm py-2.5 px-8 rounded-lg transition-colors">Visiter le projet</a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <img src="assets/projet2.jpg" alt="Aperçu du projet 2" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h4 class="font-display text-xl font-semibold text-gray-900 mb-2">Nom du projet 2</h4>
+          <p class="text-gray-600 mb-4 text-sm leading-relaxed text-justify">Projet scolaire ou personnel : précise ton rôle, la démarche et ce que tu as appris.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Python</span>
+            <span class="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Scikit-learn</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <img src="assets/projet3.jpg" alt="Aperçu du projet 3" class="w-full h-48 object-contain bg-gray-100">
+        <div class="p-6">
+          <h4 class="font-display text-xl font-semibold text-gray-900 mb-2">Nom du projet 3</h4>
+          <p class="text-gray-600 mb-4 text-sm leading-relaxed text-justify">Projet en équipe, matériel, logiciel… dis ce qui le rend intéressant.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">C++</span>
+            <span class="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Arduino</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Carrière -->
+<section id="career" class="py-16 md:py-24 bg-white fade-in-section">
+  <div class="container mx-auto px-6 max-w-6xl">
+    <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 mb-3 text-center">Carrière</h2>
+    <p class="text-lg text-gray-500 mb-12 text-center">Documents professionnels, objectifs et sources d'inspiration.</p>
+
+    <div class="flex flex-col sm:flex-row flex-wrap gap-2.5 sm:gap-4 justify-center items-center mb-16">
+      <a href="assets/CV_EN.pdf" download class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 sm:py-3 sm:px-6 rounded-lg transition-colors flex items-center justify-center space-x-2 shadow-sm text-sm sm:text-base w-full sm:w-auto" target="_blank" rel="noopener noreferrer"><i data-lucide="download" class="w-4 h-4 sm:w-5 sm:h-5"></i><span>Télécharger CV (Anglais)</span></a>
+      <a href="assets/CV_FR.pdf" download class="bg-gray-700 hover:bg-gray-800 text-white font-medium py-2 px-4 sm:py-3 sm:px-6 rounded-lg transition-colors flex items-center justify-center space-x-2 shadow-sm text-sm sm:text-base w-full sm:w-auto" target="_blank" rel="noopener noreferrer"><i data-lucide="download" class="w-4 h-4 sm:w-5 sm:h-5"></i><span>Télécharger CV (Français)</span></a>
+      <a href="https://www.linkedin.com/in/otmane-mabchour-6b2862426/" target="_blank" rel="noopener noreferrer" class="bg-blue-700 hover:bg-blue-800 text-white font-medium py-2 px-4 sm:py-3 sm:px-6 rounded-lg transition-colors flex items-center justify-center space-x-2 shadow-sm text-sm sm:text-base w-full sm:w-auto"><i data-lucide="linkedin" class="w-4 h-4 sm:w-5 sm:h-5"></i><span>Mon Profil LinkedIn</span></a>
+    </div>
+
+    <h3 class="font-display text-2xl font-bold text-gray-900 mb-6 text-center">Expériences Passées</h3>
+    <div class="max-w-2xl mx-auto bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden mb-16">
+      <div class="p-4 sm:p-6">
+        <div class="flex items-start gap-3 sm:gap-4 mb-2">
+          <div class="flex-shrink-0"><img src="https://www.google.com/s2/favicons?domain=exemple.com&sz=64" alt="Entreprise" class="w-12 h-12 rounded-lg object-contain border border-gray-100 p-1"></div>
+          <div class="flex-1">
+            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-1">
+              <div>
+                <h4 class="text-base sm:text-lg font-semibold text-gray-900">Intitulé du stage</h4>
+                <p class="text-sm font-medium text-red-600">Entreprise, Ville</p>
+              </div>
+              <span class="text-sm text-gray-400 shrink-0">Juin–Juil. 2026</span>
+            </div>
+            <p class="text-gray-700 leading-relaxed mb-3 text-sm text-justify">Résumé de la mission en une phrase :</p>
+            <ul class="list-disc list-inside text-gray-700 space-y-1.5 ml-2 text-sm">
+              <li><strong>Tâche 1 :</strong> ce que tu as fait</li>
+              <li><strong>Tâche 2 :</strong> ce que tu as fait</li>
+            </ul>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Mot-clé 1</span>
+              <span class="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Mot-clé 2</span>
+            </div>
+          </div>
+        </div>
+        <hr class="my-4">
+        <div class="flex items-start gap-3 sm:gap-4">
+          <div class="flex-shrink-0"><div class="w-12 h-12 rounded-lg bg-gray-800 text-white text-xl font-bold flex items-center justify-center">A</div></div>
+          <div class="flex-1">
+            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
+              <div>
+                <h4 class="text-base sm:text-lg font-semibold text-gray-900">Autre expérience</h4>
+                <p class="text-sm font-medium text-red-600">Entreprise, Ville</p>
+              </div>
+              <span class="text-sm text-gray-400 shrink-0">2025</span>
+            </div>
+            <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1 text-sm">
+              <li>Ce que tu as découvert</li>
+              <li>Ce que tu as appris</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto">
+      <h3 class="font-display text-2xl font-bold text-gray-900 mb-6 text-center">Modèles Inspirants</h3>
+      <p class="text-gray-500 mb-8 text-center max-w-2xl mx-auto">Profils qui t'inspirent. Clique sur une carte pour ouvrir la fiche détaillée.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+        <button class="role-model-card bg-white border border-gray-200 rounded-xl p-6 shadow-sm text-left w-full hover:shadow-lg transition-shadow duration-300 focus:outline-none focus:ring-2 focus:ring-red-300"
+          aria-label="Voir le profil de Nom Un"
+          data-title="Nom Un - Poste"
+          data-profile="Parcours de cette personne : formation, expériences, poste actuel."
+          data-interest="Pourquoi ce parcours t'inspire et ce que tu en retiens pour le tien."
+          data-image="assets/modele1.jpg">
+          <img src="assets/modele1.jpg" alt="Nom Un" class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-gray-100 object-cover">
+          <h4 class="font-display text-lg font-semibold text-gray-900 text-center">Nom Un</h4>
+          <p class="text-gray-500 mb-3 text-sm text-center">Poste, Entreprise</p>
+          <ul class="list-disc list-inside space-y-1 text-gray-600 text-sm"><li>Diplômé de [école]</li><li>Spécialité</li></ul>
+        </button>
+        <button class="role-model-card bg-white border border-gray-200 rounded-xl p-6 shadow-sm text-left w-full hover:shadow-lg transition-shadow duration-300 focus:outline-none focus:ring-2 focus:ring-red-300"
+          aria-label="Voir le profil de Nom Deux"
+          data-title="Nom Deux - Poste"
+          data-profile="Parcours de cette personne : formation, expériences, poste actuel."
+          data-interest="Pourquoi ce parcours t'inspire et ce que tu en retiens pour le tien."
+          data-image="assets/modele2.jpg">
+          <img src="assets/modele2.jpg" alt="Nom Deux" class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-gray-100 object-cover">
+          <h4 class="font-display text-lg font-semibold text-gray-900 text-center">Nom Deux</h4>
+          <p class="text-gray-500 mb-3 text-sm text-center">Poste, Entreprise</p>
+          <ul class="list-disc list-inside space-y-1 text-gray-600 text-sm"><li>Diplômé de [école]</li><li>Spécialité</li></ul>
+        </button>
+        <button class="role-model-card bg-white border border-gray-200 rounded-xl p-6 shadow-sm text-left w-full hover:shadow-lg transition-shadow duration-300 focus:outline-none focus:ring-2 focus:ring-red-300"
+          aria-label="Voir le profil de Nom Trois"
+          data-title="Nom Trois - Poste"
+          data-profile="Parcours de cette personne : formation, expériences, poste actuel."
+          data-interest="Pourquoi ce parcours t'inspire et ce que tu en retiens pour le tien."
+          data-image="assets/modele3.jpg">
+          <img src="assets/modele3.jpg" alt="Nom Trois" class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-gray-100 object-cover">
+          <h4 class="font-display text-lg font-semibold text-gray-900 text-center">Nom Trois</h4>
+          <p class="text-gray-500 mb-3 text-sm text-center">Poste, Entreprise</p>
+          <ul class="list-disc list-inside space-y-1 text-gray-600 text-sm"><li>Diplômée de [école]</li><li>Mobilité : [pays]</li></ul>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mobilité -->
+<section id="mobility" class="py-16 md:py-24 bg-gray-50 fade-in-section">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 mb-3 text-center">Mobilité</h2>
+    <p class="text-lg text-gray-500 mb-12 text-center">Compétences linguistiques et aspirations à l'international.</p>
+    <div class="space-y-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4"><i data-lucide="languages" class="w-5 h-5 text-red-600 flex-shrink-0"></i><h3 class="font-display text-xl font-semibold text-gray-900">Langues</h3></div>
+        <ul class="list-disc list-inside space-y-2 text-gray-700 ml-1">
+          <li><strong>Anglais :</strong> Niveau C1 — Prêt pour une mobilité.</li>
+          <li><strong>Allemand :</strong> Niveau B1 — Connaissances solides.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="flex items-center gap-3 mb-4"><i data-lucide="plane" class="w-5 h-5 text-red-600 flex-shrink-0"></i><h3 class="font-display text-xl font-semibold text-gray-900">Projets de Mobilité</h3></div>
+        <div class="space-y-3">
+          <p class="text-gray-700 leading-relaxed text-justify">Ton objectif principal : semestre, année de césure, double diplôme… et ce que tu veux y approfondir.</p>
+          <p class="text-gray-700 leading-relaxed text-justify"><strong>Destinations visées :</strong> pays, universités et programmes qui t'attirent.</p>
+          <p class="text-gray-700 leading-relaxed text-justify">Ce que cette expérience t'apporterait, sur le plan technique et personnel.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Engagement -->
+<section id="engagement" class="py-16 md:py-24 bg-white fade-in-section">
+  <div class="container mx-auto px-6 max-w-5xl">
+    <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 mb-3 text-center">Engagement</h2>
+    <p class="text-lg text-gray-500 mb-12 text-center">Implication associative et communautaire.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+      <div>
+        <div class="flex items-center gap-3 mb-3"><i data-lucide="compass" class="w-5 h-5 text-red-600 flex-shrink-0"></i><h3 class="font-display text-lg font-semibold text-gray-900">Association ou mouvement</h3></div>
+        <p class="text-gray-700 leading-relaxed text-justify">Ton rôle, depuis quand, et les compétences développées (leadership, organisation, budget).</p>
+      </div>
+      <div>
+        <div class="flex items-center gap-3 mb-3"><i data-lucide="globe" class="w-5 h-5 text-red-600 flex-shrink-0"></i><h3 class="font-display text-lg font-semibold text-gray-900">Action ou événement 1</h3></div>
+        <p class="text-gray-700 leading-relaxed text-justify">Ce que tu as fait et ce que tu en retiens.</p>
+      </div>
+      <div>
+        <div class="flex items-center gap-3 mb-3"><i data-lucide="scale" class="w-5 h-5 text-red-600 flex-shrink-0"></i><h3 class="font-display text-lg font-semibold text-gray-900">Action ou événement 2</h3></div>
+        <p class="text-gray-700 leading-relaxed text-justify">Ce que tu as fait et ce que tu en retiens.</p>
+      </div>
+      <div>
+        <div class="flex items-center gap-3 mb-3"><i data-lucide="lightbulb" class="w-5 h-5 text-red-600 flex-shrink-0"></i><h3 class="font-display text-lg font-semibold text-gray-900">Action ou événement 3</h3></div>
+        <p class="text-gray-700 leading-relaxed text-justify">Ce que tu as fait et ce que tu en retiens.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Activités -->
+<section id="activities" class="py-16 md:py-24 bg-gray-50 fade-in-section">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 mb-3 text-center">Activités</h2>
+    <p class="text-lg text-gray-500 mb-12 text-center">Passions en dehors de l'ingénierie.</p>
+    <div>
+      <div class="flex items-center gap-3 mb-6"><i data-lucide="music" class="w-5 h-5 text-red-600 flex-shrink-0"></i><h3 class="font-display text-xl font-semibold text-gray-900">Ta passion principale</h3></div>
+      <div class="divide-y divide-gray-200">
+        <div class="pb-5"><h4 class="text-base font-semibold text-gray-800 mb-1">Activité 1</h4><p class="text-gray-700 text-sm leading-relaxed text-justify">Niveau, durée de pratique, ce que ça t'apporte.</p></div>
+        <div class="py-5"><h4 class="text-base font-semibold text-gray-800 mb-1">Activité 2</h4><p class="text-gray-700 text-sm leading-relaxed text-justify">Niveau, durée de pratique, ce que ça t'apporte.</p></div>
+        <div class="pt-5"><h4 class="text-base font-semibold text-gray-800 mb-1">Activité 3</h4><p class="text-gray-700 text-sm leading-relaxed text-justify">Niveau, durée de pratique, ce que ça t'apporte.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-16 md:py-24 bg-white fade-in-section">
+  <div class="container mx-auto px-6 max-w-5xl">
+    <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 mb-3 text-center">Contact</h2>
+    <p class="text-lg text-gray-500 mb-12 text-center">N'hésitez pas à me contacter pour un stage, un projet ou un simple échange.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+      <div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow">
+        <div class="flex justify-center items-center w-14 h-14 bg-red-50 text-red-600 rounded-full mx-auto mb-4"><i data-lucide="mail" class="w-7 h-7"></i></div>
+        <h3 class="font-display text-lg font-semibold text-gray-900 mb-2">Email</h3>
+        <a href="mailto:othmanmabchour40@gmail.com" class="text-red-600 hover:text-red-800 break-all text-sm">othmanmabchour40@gmail.com</a>
+      </div>
+      <div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow">
+        <div class="flex justify-center items-center w-14 h-14 bg-red-50 text-red-600 rounded-full mx-auto mb-4"><i data-lucide="phone" class="w-7 h-7"></i></div>
+        <h3 class="font-display text-lg font-semibold text-gray-900 mb-2">Téléphone</h3>
+        <a href="tel:+33758571954" class="text-gray-700 hover:text-gray-900 text-sm">07 58 57 19 54</a>
+      </div>
+      <div class="group relative bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow">
+        <div class="flex justify-center items-center w-14 h-14 bg-red-50 text-red-600 rounded-full mx-auto mb-4"><i data-lucide="linkedin" class="w-7 h-7"></i></div>
+        <h3 class="font-display text-lg font-semibold text-gray-900 mb-2">LinkedIn</h3>
+        <p class="text-red-600 group-hover:text-red-800 transition-colors text-sm">Mon profil LinkedIn</p>
+        <a href="https://www.linkedin.com/in/otmane-mabchour-6b2862426/" target="_blank" rel="noopener noreferrer" class="absolute inset-0 rounded-xl"><span class="sr-only">Mon profil LinkedIn</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="border-t border-gray-200 bg-white">
+  <div class="container mx-auto px-6 py-8 text-center text-gray-400 text-sm">
+    <p>&copy; 2026 Otmane MABCHOUR.</p>
+    <p class="mt-1">Contact : <a href="mailto:othmanmabchour40@gmail.com" class="hover:text-red-600 transition-colors">othmanmabchour40@gmail.com</a></p>
+  </div>
+</footer>
+
+<!-- Fiche profil (modale) -->
+<div id="role-modal" class="fixed inset-0 z-50 flex items-center justify-center p-6 opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out">
+  <div id="modal-overlay" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+  <div id="modal-content" class="relative bg-white rounded-xl shadow-2xl max-w-2xl w-full p-5 sm:p-8 z-10 mx-auto opacity-0 scale-95 transition-all duration-300 ease-in-out">
+    <button id="modal-close-btn" aria-label="Fermer la fiche profil" class="absolute top-4 right-4 text-gray-400 hover:text-red-600 transition-colors"><i data-lucide="x" class="w-6 h-6"></i></button>
+    <h3 id="modal-title" class="font-display text-2xl font-bold text-gray-900 mb-4"></h3>
+    <img id="modal-image" src="" alt="" aria-hidden="true" class="w-24 h-24 rounded-full mx-auto my-4 border-4 border-gray-100 shadow-md object-cover">
+    <h4 class="font-display text-lg font-semibold text-red-600 mt-6 mb-2">Profil Détaillé</h4>
+    <p id="modal-profile" class="text-gray-700 leading-relaxed whitespace-pre-wrap text-justify"></p>
+    <h4 class="font-display text-lg font-semibold text-red-600 mt-6 mb-2">Mon Intérêt</h4>
+    <p id="modal-interest" class="text-gray-700 leading-relaxed whitespace-pre-wrap text-justify"></p>
+  </div>
+</div>
+
+<script>
+lucide.createIcons();
+
+// Menu mobile
+const mBtn=document.getElementById('mobile-menu-button'),menu=document.getElementById('mobile-menu'),
+      iB=document.getElementById('icon-burger'),iC=document.getElementById('icon-close');
+function setMenu(open){menu.classList.toggle('menu-open',open);iB.classList.toggle('hidden',open);iC.classList.toggle('hidden',!open)}
+mBtn.addEventListener('click',()=>setMenu(!menu.classList.contains('menu-open')));
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+
+// Apparition des sections
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.fade-in-section').forEach(s=>io.observe(s));
+
+// Modale « Modèles inspirants »
+const modal=document.getElementById('role-modal'),box=document.getElementById('modal-content');
+function openModal(c){
+  document.getElementById('modal-title').textContent=tr(c.dataset.title);
+  document.getElementById('modal-profile').textContent=tr(c.dataset.profile);
+  document.getElementById('modal-interest').textContent=tr(c.dataset.interest);
+  document.getElementById('modal-image').src=c.dataset.image;
+  modal.classList.remove('opacity-0','pointer-events-none');
+  box.classList.remove('opacity-0','scale-95');
+}
+function closeModal(){modal.classList.add('opacity-0','pointer-events-none');box.classList.add('opacity-0','scale-95')}
+document.querySelectorAll('.role-model-card').forEach(c=>c.addEventListener('click',()=>openModal(c)));
+document.getElementById('modal-overlay').addEventListener('click',closeModal);
+document.getElementById('modal-close-btn').addEventListener('click',closeModal);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+</script>
+<script>
+// ===== Traductions : clé = texte français de la page ; valeurs = [anglais, espagnol] =====
+const D={
+"Accueil":["Home","Inicio"],"Ingénierie":["Engineering","Ingeniería"],"Carrière":["Career","Carrera"],
+"Mobilité":["Mobility","Movilidad"],"Engagement":["Involvement","Compromiso"],"Activités":["Activities","Actividades"],
+"Contact":["Contact","Contacto"],
+"Étudiant ingénieur à ENSEEIHT, je [ta phrase d'accroche : ce que tu fais et pourquoi].":["Engineering student at ENSEEIHT, I [your tagline: what you do and why].","Estudiante de ingeniería en ENSEEIHT, yo [tu frase de presentación: lo que haces y por qué]."],
+"[Ton domaine principal]":["[Your main field]","[Tu área principal]"],
+"[Ton école], [Ta ville]":["[Your school], [Your city]","[Tu escuela], [Tu ciudad]"],
+"Projets et compétences de mon cursus.":["Projects and skills from my studies.","Proyectos y competencias de mi formación."],
+"Compétences":["Skills","Competencias"],"Langages":["Programming languages","Lenguajes de programación"],
+"Traitement de données":["Data processing","Procesamiento de datos"],
+"Outils & Systèmes":["Tools & Systems","Herramientas y sistemas"],
+"Travail en équipe":["Teamwork","Trabajo en equipo"],"Gestion de projet":["Project management","Gestión de proyectos"],
+"Créativité":["Creativity","Creatividad"],"Projets":["Projects","Proyectos"],
+"Nom du projet 1":["Project name 1","Nombre del proyecto 1"],"Nom du projet 2":["Project name 2","Nombre del proyecto 2"],"Nom du projet 3":["Project name 3","Nombre del proyecto 3"],
+"Décris en 3 ou 4 phrases le besoin, ce que tu as construit, les choix techniques et le résultat obtenu.":["Describe in 3 or 4 sentences the need, what you built, the technical choices and the result.","Describe en 3 o 4 frases la necesidad, lo que construiste, las decisiones técnicas y el resultado."],
+"Projet scolaire ou personnel : précise ton rôle, la démarche et ce que tu as appris.":["School or personal project: state your role, your approach and what you learned.","Proyecto académico o personal: indica tu papel, el enfoque y lo que aprendiste."],
+"Projet en équipe, matériel, logiciel… dis ce qui le rend intéressant.":["Team project, hardware, software… say what makes it interesting.","Proyecto en equipo, hardware, software… di qué lo hace interesante."],
+"Visiter le projet":["Visit the project","Visitar el proyecto"],
+"Documents professionnels, objectifs et sources d'inspiration.":["Professional documents, goals and sources of inspiration.","Documentos profesionales, objetivos y fuentes de inspiración."],
+"Télécharger CV (Anglais)":["Download CV (English)","Descargar CV (inglés)"],"Télécharger CV (Français)":["Download CV (French)","Descargar CV (francés)"],
+"Mon Profil LinkedIn":["My LinkedIn Profile","Mi perfil de LinkedIn"],"Mon profil LinkedIn":["My LinkedIn profile","Mi perfil de LinkedIn"],
+"Expériences Passées":["Past Experience","Experiencia previa"],
+"Intitulé du stage":["Internship title","Título de las prácticas"],"Entreprise, Ville":["Company, City","Empresa, Ciudad"],
+"Juin–Juil. 2026":["Jun–Jul 2026","Jun–Jul 2026"],
+"Résumé de la mission en une phrase :":["Summary of the mission in one sentence:","Resumen de la misión en una frase:"],
+"Tâche 1 :":["Task 1:","Tarea 1:"],"Tâche 2 :":["Task 2:","Tarea 2:"],"ce que tu as fait":["what you did","lo que hiciste"],
+"Mot-clé 1":["Keyword 1","Palabra clave 1"],"Mot-clé 2":["Keyword 2","Palabra clave 2"],
+"Autre expérience":["Other experience","Otra experiencia"],
+"Ce que tu as découvert":["What you discovered","Lo que descubriste"],"Ce que tu as appris":["What you learned","Lo que aprendiste"],
+"Modèles Inspirants":["Role Models","Modelos inspiradores"],
+"Profils qui t'inspirent. Clique sur une carte pour ouvrir la fiche détaillée.":["Profiles that inspire you. Click a card to open the detailed profile.","Perfiles que te inspiran. Haz clic en una tarjeta para abrir la ficha detallada."],
+"Poste, Entreprise":["Position, Company","Puesto, Empresa"],
+"Diplômé de [école]":["Graduate of [school]","Egresado de [escuela]"],"Diplômée de [école]":["Graduate of [school]","Egresada de [escuela]"],
+"Spécialité":["Specialty","Especialidad"],"Mobilité : [pays]":["Mobility: [country]","Movilidad: [país]"],
+"Compétences linguistiques et aspirations à l'international.":["Language skills and international aspirations.","Competencias lingüísticas y aspiraciones internacionales."],
+"Langues":["Languages","Idiomas"],
+"Anglais :":["English:","Inglés:"],"Allemand :":["German:","Alemán:"],
+"Niveau C1 — Prêt pour une mobilité.":["Level C1 — Ready for a mobility period.","Nivel C1 — Listo para una movilidad."],
+"Niveau B1 — Connaissances solides.":["Level B1 — Solid knowledge.","Nivel B1 — Conocimientos sólidos."],
+"Projets de Mobilité":["Mobility Plans","Proyectos de movilidad"],
+"Ton objectif principal : semestre, année de césure, double diplôme… et ce que tu veux y approfondir.":["Your main goal: a semester, a gap year, a double degree… and what you want to deepen.","Tu objetivo principal: un semestre, un año sabático, doble titulación… y lo que quieres profundizar."],
+"Destinations visées :":["Target destinations:","Destinos previstos:"],
+"pays, universités et programmes qui t'attirent.":["countries, universities and programs that appeal to you.","países, universidades y programas que te atraen."],
+"Ce que cette expérience t'apporterait, sur le plan technique et personnel.":["What this experience would bring you, technically and personally.","Lo que esta experiencia te aportaría, en lo técnico y en lo personal."],
+"Implication associative et communautaire.":["Involvement in associations and the community.","Implicación asociativa y comunitaria."],
+"Association ou mouvement":["Association or movement","Asociación o movimiento"],
+"Ton rôle, depuis quand, et les compétences développées (leadership, organisation, budget).":["Your role, since when, and the skills developed (leadership, organization, budget).","Tu papel, desde cuándo y las competencias desarrolladas (liderazgo, organización, presupuesto)."],
+"Action ou événement 1":["Action or event 1","Acción o evento 1"],"Action ou événement 2":["Action or event 2","Acción o evento 2"],"Action ou événement 3":["Action or event 3","Acción o evento 3"],
+"Ce que tu as fait et ce que tu en retiens.":["What you did and what you took from it.","Lo que hiciste y lo que aprendiste de ello."],
+"Passions en dehors de l'ingénierie.":["Passions outside of engineering.","Pasiones fuera de la ingeniería."],
+"Ta passion principale":["Your main passion","Tu pasión principal"],
+"Activité 1":["Activity 1","Actividad 1"],"Activité 2":["Activity 2","Actividad 2"],"Activité 3":["Activity 3","Actividad 3"],
+"Niveau, durée de pratique, ce que ça t'apporte.":["Level, years of practice, what it brings you.","Nivel, años de práctica, lo que te aporta."],
+"N'hésitez pas à me contacter pour un stage, un projet ou un simple échange.":["Feel free to contact me for an internship, a project or just a chat.","No dudes en contactarme para unas prácticas, un proyecto o simplemente para charlar."],
+"Téléphone":["Phone","Teléfono"],"Contact :":["Contact:","Contacto:"],
+"Profil Détaillé":["Detailed Profile","Perfil detallado"],"Mon Intérêt":["Why It Inspires Me","Por qué me inspira"],
+"Nom Un - Poste":["Name One - Position","Nombre Uno - Puesto"],"Nom Deux - Poste":["Name Two - Position","Nombre Dos - Puesto"],"Nom Trois - Poste":["Name Three - Position","Nombre Tres - Puesto"],
+"Parcours de cette personne : formation, expériences, poste actuel.":["This person's path: education, experience, current position.","Trayectoria de esta persona: formación, experiencia, puesto actual."],
+"Pourquoi ce parcours t'inspire et ce que tu en retiens pour le tien.":["Why this path inspires you and what you take from it for yours.","Por qué esta trayectoria te inspira y qué sacas de ella para la tuya."],
+"Changer de thème":["Toggle theme","Cambiar de tema"],"Langue":["Language","Idioma"],
+"Fermer la fiche profil":["Close profile","Cerrar la ficha"],"Ouvrir le menu":["Open menu","Abrir el menú"]
+};
+const LANGS=['fr','en','es'];
+let cur='fr';
+const norm=s=>s.trim().replace(/\s+/g,' ');
+function tr(s){const e=D[norm(s)];return cur==='fr'||!e?s:e[LANGS.indexOf(cur)-1]}
+function applyLang(l){
+  cur=l;document.documentElement.lang=l;
+  const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+  let n;while(n=w.nextNode()){
+    if(['SCRIPT','STYLE'].includes(n.parentNode.tagName))continue;
+    if(n._o===undefined)n._o=n.nodeValue;
+    const k=norm(n._o);if(!k)continue;
+    const e=D[k];
+    if(l==='fr'||!e){n.nodeValue=n._o;continue}
+    n.nodeValue=n._o.match(/^\s*/)[0]+e[LANGS.indexOf(l)-1]+n._o.match(/\s*$/)[0];
+  }
+  document.querySelectorAll('[aria-label]').forEach(el=>{
+    if(el._a===undefined)el._a=el.getAttribute('aria-label');
+    el.setAttribute('aria-label',l==='fr'?el._a:tr(el._a));
+  });
+  document.querySelectorAll('.lang-btn').forEach(b=>{
+    const on=b.dataset.lang===l;
+    b.classList.toggle('bg-red-600',on);b.classList.toggle('text-white',on);b.classList.toggle('text-red-600',!on);
+    b.setAttribute('aria-pressed',on);
+  });
+  try{localStorage.setItem('lang',l)}catch(e){}
+}
+document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>applyLang(b.dataset.lang)));
+let saved='fr';try{saved=localStorage.getItem('lang')||'fr'}catch(e){}
+applyLang(LANGS.includes(saved)?saved:'fr');
+</script>
+<script>
+// Mode clair / sombre (mémorisé)
+document.querySelectorAll('.theme-btn').forEach(b=>b.addEventListener('click',()=>{
+  const d=document.documentElement.classList.toggle('dark');
+  try{localStorage.setItem('theme',d?'dark':'light')}catch(e){}
+}));
+</script>
+</body>
+</html>
